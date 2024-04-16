@@ -1,7 +1,7 @@
 name: 'Build Ptljadoc'
 description: 'Build a Petljadoc project and deploy it as GitHub Pages'
 outputs:
-  url:
+  page_url:
     description: 'GitHub Pages URL'
     value: ${{ steps.deployment.outputs.page_url }}
 runs:
