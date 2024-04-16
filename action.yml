@@ -21,6 +21,10 @@ runs:
     - name: Build with Petljadoc
       run: petljadoc publish --warnaserror
       shell: bash
+    - name: Make the zip package
+      run: |
+        cd docs  
+        zip -r course.zip .  
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
