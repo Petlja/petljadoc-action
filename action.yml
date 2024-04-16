@@ -25,7 +25,7 @@ runs:
       run: |
         cd docs  
         zip -r course.zip .  
-        shell: bash
+      shell: bash
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
