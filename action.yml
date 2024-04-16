@@ -1,5 +1,8 @@
 name: 'Build Ptljadoc'
 description: 'Build a Petljadoc project and deploy it as GitHub Pages'
+outputs:
+  url:
+    description: 'GitHub Pages URL'
 runs:
   using: "composite"
   steps:
@@ -24,3 +27,6 @@ runs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
+    - name: Set the `url` output
+      run: echo "url=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_OUTPUT
+      shell: bash
